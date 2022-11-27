@@ -12,6 +12,9 @@ class main extends Component {
     getstring = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
+            pushing:'Creating queue',
+            reverseStr:'',
+            poping:''
 
         });
     }
@@ -31,24 +34,26 @@ class main extends Component {
 
                 this.setState({
                     string: (newArray.join('')),
-                    poping: this.state.poping + unshiftstr
+                    poping: this.state.poping + unshiftstr, 
+                    pushing:'Remaining in Queue, ' + newArray.length,
                 })
             }
             else {
                 this.setState({
-                    pushing: ': : :stack is empty enter another stack',
+                    pushing: ': : :Queue is empty, create a new queue',
                 })
             }
 
         }
         return (
             <main>
+                <h1>Queue implimentation</h1>
                 <form action="" onChange={this.getstring} onSubmit={this.captureinput}>
 
                     <input type="text" name='string' onChange={this.getstring} />
                 </form>
-                <button onClick={reverse}>click to unstack</button>
-                <p>stack content : : {this.state.string}</p>
+                <button onClick={reverse}>click to de-queue</button>
+                <p>queue content : : {this.state.string}</p>
                 <p>{this.state.reverseStr}{this.state.poping}  {this.state.pushing}</p>
 
             </main>
