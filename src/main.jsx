@@ -12,9 +12,9 @@ class main extends Component {
     getstring = (e) => {
         this.setState({
             [e.target.name]: e.target.value,
-            pushing:'Creating queue',
-            reverseStr:'',
-            poping:''
+            pushing: 'Creating queue',
+            reverseStr: '',
+            poping: ''
 
         });
     }
@@ -34,8 +34,8 @@ class main extends Component {
 
                 this.setState({
                     string: (newArray.join('')),
-                    poping: this.state.poping + unshiftstr, 
-                    pushing:'Remaining in Queue, ' + newArray.length,
+                    poping: this.state.poping + unshiftstr,
+                    pushing: 'Remaining in Queue, ' + newArray.length,
                 })
             }
             else {
@@ -53,8 +53,8 @@ class main extends Component {
                     <input type="text" name='string' onChange={this.getstring} />
                 </form>
                 <button onClick={reverse}>click to de-queue</button>
-                <p>queue content : : {this.state.string}</p>
-                <p>{this.state.reverseStr}{this.state.poping}  {this.state.pushing}</p>
+                <p>queue content : :<b>{this.state.string}</b> </p>
+                <p><b>{this.state.reverseStr}{this.state.poping}</b>  {this.state.pushing}</p>
 
             </main>
         );
